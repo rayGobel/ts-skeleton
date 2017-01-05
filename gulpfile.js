@@ -16,9 +16,11 @@ gulp.task("mocha-test", ["compile"], function () {
     .pipe(mocha());
 });
 
-gulp.task("default", ["mocha-test"], function() {
+gulp.task("default", ["mocha-test"]);
+
+
+gulp.task("monitor", ["mocha-test"], function() {
 
   gulp.watch("src/**/*.ts", ["mocha-test"]);
 
 });
-
