@@ -1,14 +1,14 @@
 {
     "compilerOptions": {
         "noImplicitAny": true,
-        "target": "es5",
-        "outDir": "dist"
+        "target": "es6"
     },
-    "include": [
-        "src/**/*"
+    "files": [
+        "src/**/*.ts"
     ],
     "exclude": [
         "node_modules",
+        "dist",
         "**/*.spec.ts"
     ]
 }

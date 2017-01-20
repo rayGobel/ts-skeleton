@@ -2,8 +2,9 @@
 let gulp = require('gulp');
 let del = require('del');
 let ts = require('gulp-typescript');
-let tsProject = ts.createProject('tsconfig.json');
 let mocha = require('gulp-mocha');
+let rename = require('gulp-rename');
+let babel = require('gulp-babel');
 
 gulp.task('clean', function () {
   return del([
@@ -13,9 +14,15 @@ gulp.task('clean', function () {
 });
 
 gulp.task('compile', ['clean'], function () {
-  return tsProject.src()
+  var tsProject = ts.createProject('tsconfig.json');
+
+  return gulp.src('src/**/*.ts')
     .pipe(tsProject())
-    .js.pipe(gulp.dest("dist"));
+    .pipe(babel())
+    .pipe(rename(function (path) {
+      path.extname = '.js';
+    }))
+    .pipe(gulp.dest("dist"));
 
 });
 
