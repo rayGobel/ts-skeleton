@@ -26,15 +26,15 @@ gulp.task('compile', ['clean'], function () {
 
 });
 
-gulp.task('mocha-test', ['compile'], function () {
+gulp.task('test', ['compile'], function () {
   gulp.src('dist/test/**/*.js', {read: false})
     .pipe(mocha());
 });
 
-gulp.task('default', ['mocha-test']);
+gulp.task('default', ['test']);
 
-gulp.task('monitor', ['mocha-test'], function() {
+gulp.task('watch', ['test'], function() {
 
-  gulp.watch('src/**/*.ts', ['mocha-test']);
+  gulp.watch('src/**/*.ts', ['test']);
 
 });
