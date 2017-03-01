@@ -24,5 +24,25 @@
     "gulp-typescript": "^3.1.3",
     "mocha": "^3.2.0",
     "typescript": "^2.0.10"
-  }
+  },
+  "dependencies": {
+    "@types/node": "^7.0.5",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-runtime": "^6.22.0",
+    "del": "^2.2.2",
+    "gulp-babel": "^6.1.2",
+    "gulp-rename": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rayGobel/ts-skeleton.git"
+  },
+  "keywords": [
+    "typescript"
+  ],
+  "bugs": {
+    "url": "https://github.com/rayGobel/ts-skeleton/issues"
+  },
+  "homepage": "https://github.com/rayGobel/ts-skeleton#readme"
 }
